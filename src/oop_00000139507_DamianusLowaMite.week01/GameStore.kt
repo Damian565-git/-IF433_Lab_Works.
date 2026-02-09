@@ -1,16 +1,19 @@
-fun printReceipt(title: String, finalPrice: Int) {
-    println("=== SteamKW Receipt ===")
-    println("Game Title  : $title")
-    println("Final Price: Rp $finalPrice")
-}
 fun main() {
     val gameTitle = "Cyberpunk 2077"
     val price = 750000
+    val userNote: String? = null
 
     val finalPrice = calculateDiscount(price)
 
     printReceipt(
         title = gameTitle,
-        finalPrice = finalPrice
+        finalPrice = finalPrice,
+        note = userNote
     )
+}
+fun printReceipt(title: String, finalPrice: Int, note: String?) {
+    println("=== SteamKW Receipt ===")
+    println("Game Title  : $title")
+    println("Final Price: Rp $finalPrice")
+    println("Note       : ${note ?: "Tidak ada catatan"}")
 }
