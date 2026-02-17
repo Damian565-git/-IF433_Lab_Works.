@@ -1,4 +1,4 @@
-package oop_<NIM>_<NamaLengkap>.week01
+package oop_00000139507_DamianusLowaMite.week02
 
 fun main() {
     val radius = 7.0
