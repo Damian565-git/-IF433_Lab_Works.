@@ -3,7 +3,8 @@ package oop_139507_Damian.week02
 class Student(
     val nim: String,
     val name: String,
-    var major: String
+    var major: String,
+    var gpa: Double = 0.0
 ) {
 
     init {
@@ -15,4 +16,5 @@ class Student(
     constructor(nim: String, name: String)
             : this(nim, name, "Non-Matriculated")
 }
+
 
