@@ -8,11 +8,11 @@ class Student(
 
     init {
         if (nim.length != 8) {
-            println("WARNING: NIM harus 8 digit!")
-        }
-
-        if (name.isBlank()) {
-            println("WARNING: Nama tidak boleh kosong!")
+            println("WARNING: NIM tidak valid!")
         }
     }
+
+    constructor(nim: String, name: String)
+            : this(nim, name, "Non-Matriculated")
 }
+
