@@ -31,3 +31,22 @@ fun main() {
     println("Jurusan: ${student.major}")
     println("IPK: ${student.gpa}")
 }
+
+println("\n=== SISTEM DENDA PERPUSTAKAAN ===")
+
+print("Judul Buku: ")
+val title = input.nextLine()
+
+print("Nama Peminjam: ")
+val borrower = input.nextLine()
+
+print("Lama Pinjam (hari): ")
+var duration = input.nextInt()
+
+if (duration < 0) {
+    duration = 1
+}
+
+val loan = Loan(title, borrower, duration)
+
+println("Total Denda: Rp ${loan.calculateFine()}")
