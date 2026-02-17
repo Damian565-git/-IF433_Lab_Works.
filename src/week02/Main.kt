@@ -1,29 +1,33 @@
 package oop_139507_Damian.week02
 
-import java.util.Scanner
-
 fun main() {
 
     val input = Scanner(System.`in`)
 
-    print("Masukkan NIM (8 digit): ")
-    val nim = input.nextLine()
+    println("Pilih Jalur:")
+    println("1. Dengan Jurusan")
+    println("2. Tanpa Jurusan")
 
-    if (nim.length != 8) {
-        println("NIM salah! Program berhenti.")
-        return
-    }
+    val choice = input.nextInt()
+    input.nextLine()
+
+    print("Masukkan NIM: ")
+    val nim = input.nextLine()
 
     print("Masukkan Nama: ")
     val name = input.nextLine()
 
-    print("Masukkan Jurusan: ")
-    val major = input.nextLine()
-
-    val student = Student(nim, name, major)
+    val student = if (choice == 1) {
+        print("Masukkan Jurusan: ")
+        val major = input.nextLine()
+        Student(nim, name, major)
+    } else {
+        Student(nim, name)
+    }
 
     println("\nData Mahasiswa:")
     println("NIM: ${student.nim}")
     println("Nama: ${student.name}")
     println("Jurusan: ${student.major}")
+    println("IPK: ${student.gpa}")
 }
