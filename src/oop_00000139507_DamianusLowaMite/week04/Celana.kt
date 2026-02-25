@@ -1,4 +1,11 @@
-package oop_139507_Damian.oop_00000139507_DamianusLowaMite.week04
+package oop_139507_Damian.week04
 
-class Celana {
+
+class Celana:Pakaian() {
+    private var stock:Int = 20;
+    public fun update_stock() {
+        super.harga = stock * 120;
+        println("Stock $stock celana Terupdate, " +
+                "harga ${super.harga}");
+    }
 }

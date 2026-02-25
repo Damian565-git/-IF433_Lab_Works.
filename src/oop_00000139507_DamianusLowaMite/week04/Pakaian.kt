@@ -1,4 +1,13 @@
-package oop_139507_Damian.oop_00000139507_DamianusLowaMite.week04
+package oop_139507_Damian.week04
 
-class Pakaian {
+open class Pakaian {
+    protected var merk:String = "";
+    protected var harga:Int = 0;
+    init {
+        this.merk = "Uniqlo";
+        println("merk is $merk");
+    }
+    public fun jumlah_penjualan(){
+        println("Pakaian terjual");
+    }
 }
