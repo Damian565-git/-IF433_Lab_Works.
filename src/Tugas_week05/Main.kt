@@ -28,3 +28,9 @@ fun main() {
         println("--------------------------------")
     }
 }
+println("\n=== TUGAS MANDIRI 1: Method Overloading ===")
+val mathHelper = MathHelper()
+
+println("Luas Persegi (sisi 5)        : ${mathHelper.hitungLuas(5)}")
+println("Luas Persegi Panjang (4 x 7)  : ${mathHelper.hitungLuas(4, 7)}")
+println("Luas Lingkaran (jari2 7.0)    : ${mathHelper.hitungLuas(7.0)}")
