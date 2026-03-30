@@ -20,3 +20,11 @@ val data1 = DataUser("Alice", 22)
 val data2 = DataUser("Alice", 22)
 println(data1)  // Output: DataUser(name=Alice, age=22) - readable format
 println("Sama? ${data1 == data2}")  // True - structural equality
+
+// copy() - membuat salinan dengan modifikasi tanpa mengubah objek asli
+val data3 = data1.copy(age = 23)
+println("Hasil Copy: $data3")
+
+// Destructuring Declaration - memecah objek menjadi variabel
+val (userName, userAge) = data1
+println("Destructured: $userName berumur $userAge")
