@@ -9,3 +9,8 @@ fun main() {
     val client = NetworkClient.createClient()  // Instansiasi lewat Factory
     client.connect()
 }
+println("\n=== TEST REGULAR CLASS ===")
+val reg1 = RegularUser("Alice", 22)
+val reg2 = RegularUser("Alice", 22)
+println(reg1)  // Akan mencetak alamat memori seperti: RegularUser@1a2b3c4d
+println("Sama? ${reg1 == reg2}")  // False - meskipun isi sama
