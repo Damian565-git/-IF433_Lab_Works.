@@ -6,35 +6,35 @@ fun main() {
     DatabaseManager.connect()
 
     println("\n=== TEST COMPANION OBJECT ===")
-    val client = NetworkClient.createClient()  // Instansiasi lewat Factory
+    val client = NetworkClient.createClient()
     client.connect()
-}
-println("\n=== TEST REGULAR CLASS ===")
-val reg1 = RegularUser("Alice", 22)
-val reg2 = RegularUser("Alice", 22)
-println(reg1)  // Akan mencetak alamat memori seperti: RegularUser@1a2b3c4d
-println("Sama? ${reg1 == reg2}") // False - meskipun isi sama
 
-println("\n=== TEST DATA CLASS ===")
-val data1 = DataUser("Alice", 22)
-val data2 = DataUser("Alice", 22)
-println(data1)  // Output: DataUser(name=Alice, age=22) - readable format
-println("Sama? ${data1 == data2}")  // True - structural equality
+    println("\n=== TEST REGULAR CLASS ===")
+    val reg1 = RegularUser("Alice", 22)
+    val reg2 = RegularUser("Alice", 22)
+    println(reg1)
+    println("Sama? ${reg1 == reg2}")
 
-// copy() - membuat salinan dengan modifikasi tanpa mengubah objek asli
-val data3 = data1.copy(age = 23)
-println("Hasil Copy: $data3")
+    println("\n=== TEST DATA CLASS ===")
+    val data1 = DataUser("Alice", 22)
+    val data2 = DataUser("Alice", 22)
+    println(data1)
+    println("Sama? ${data1 == data2}")
 
-// Destructuring Declaration - memecah objek menjadi variabel
-val (userName, userAge) = data1
-println("Destructured: $userName berumur $userAge")
+    val data3 = data1.copy(age = 23)
+    println("Hasil Copy: $data3")
 
-println("\n=== TEST SEALED CLASS ===")
-val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+    val (userName, userAge) = data1
+    println("Destructured: $userName berumur $userAge")
 
-// ERROR: 'when' expression must be exhaustive
-val uiMessage = when(response) {
-    is ApiResponse.Success -> "Tampilkan: ${response.data}"
-    is ApiResponse.Error -> "Munculkan alert: ${response.message}"
-    // Loading tidak ditangani -> ERROR!
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+
+    val uiMessage = when(response) {
+        is ApiResponse.Success -> "Tampilkan: ${response.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+        ApiResponse.Loading -> "Tampilkan Spinner"
+    }
+
+    println("UI Message: $uiMessage")
 }
