@@ -37,4 +37,23 @@ fun main() {
     mutableSet.add("Grape")
     mutableSet.add("Banana") // Tidak akan ditambahkan karena sudah ada
     println("MutableSet setelah tambah: $mutableSet")
+
+    println("\n== TEST MAP ==")
+
+    // Immutable Map
+    val studentGrades = mapOf(
+        "Alice" to "A",
+        "Bob" to "B",
+        "Charlie" to "A"
+    )
+    println("Student Grades: $studentGrades")
+    println("Nilai Bob: ${studentGrades["Bob"]}")
+
+    // Mutable Map
+    val inventory = mutableMapOf("Apples" to 50, "Bananas" to 30)
+    println("Inventory awal: $inventory")
+
+    inventory["Oranges"] = 20  // Menambah data baru
+    inventory["Apples"] = 45   // Mengupdate data lama
+    println("Inventory akhir: $inventory")
 }
