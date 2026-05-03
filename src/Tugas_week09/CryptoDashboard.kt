@@ -10,4 +10,12 @@ fun main() {
 
     // Membungkus semua koin dalam ApiResponse
     val response = ApiResponse("200 OK", coinRepo.getAll())
+
+    // Menampilkan data
+    println("=== CRYPTO WALLET DASHBOARD ===")
+    println("Status: ${response.status}")
+    println("Daftar Koin:")
+    response.data.forEach { coin ->
+        println("  - ${coin.name}: ${coin.balance} USD")
+    }
 }
