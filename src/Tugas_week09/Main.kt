@@ -19,4 +19,9 @@ fun main() {
     val processedString = processData("Kotlin is awesome")
     println("Processed double: $processedDouble")
     println("Processed string: $processedString")
+
+    println("\n=== TEST CONSTRAINTS ===")
+    val math = MathBox(10.5, 20)
+    println("Total: ${math.sum()}")
+    println("Terbesar: ${getMax(45, 90)}")
 }
