@@ -7,4 +7,7 @@ fun main() {
     coinRepo.add(Coin("BTC", 0.5))
     coinRepo.add(Coin("ETH", 5.0))
     coinRepo.add(Coin("USDT", 1000.0))
+
+    // Membungkus semua koin dalam ApiResponse
+    val response = ApiResponse("200 OK", coinRepo.getAll())
 }
