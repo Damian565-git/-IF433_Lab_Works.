@@ -10,4 +10,13 @@ fun main() {
     println("\n=== TEST MULTIPLE PARAMETERS ===")
     val itemPrice = PairBox("Bitcoin", 65000)
     println("Aset: ${itemPrice.key}, Harga: ${itemPrice.value} USD")
+
+    println("\n=== TEST GENERIC FUNCTIONS ===")
+    printData(3.14159)
+    printData("Hello Generic World")
+
+    val processedDouble = processData(99.99)
+    val processedString = processData("Kotlin is awesome")
+    println("Processed double: $processedDouble")
+    println("Processed string: $processedString")
 }
