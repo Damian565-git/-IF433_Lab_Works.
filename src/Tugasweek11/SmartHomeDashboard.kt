@@ -15,3 +15,10 @@ val kamera = SmartDevice("Ezviz Outdoor", "Camera").apply {
     println("(LOG) Kamera terhubung")
     homeDevices.add(it)
 }
+val ac = run {
+    SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
+}
+homeDevices.add(ac)
+
+val feeder = SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10)
+homeDevices.add(feeder)
