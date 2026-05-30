@@ -8,3 +8,9 @@ fun main() {
         age = 30
     }
 }
+
+fun main() {
+    val userAlso = User("Jane", 25).also {
+        println("User created: $it")
+    }
+}
