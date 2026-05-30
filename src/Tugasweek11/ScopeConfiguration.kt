@@ -14,3 +14,8 @@ fun main() {
         println("User created: $it")
     }
 }
+fun main() {
+    with(user) {
+        println("Name: $name, Age: $age")
+    }
+}
