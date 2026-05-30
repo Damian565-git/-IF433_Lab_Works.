@@ -8,3 +8,10 @@ val lampu = SmartDevice("Philips WiZ Living Room", "Lighting", true, 12).apply {
 }.also {
     homeDevices.add(it)
 }
+val kamera = SmartDevice("Ezviz Outdoor", "Camera").apply {
+    isOnline = true
+    powerLoad = 5
+}.also {
+    println("(LOG) Kamera terhubung")
+    homeDevices.add(it)
+}
