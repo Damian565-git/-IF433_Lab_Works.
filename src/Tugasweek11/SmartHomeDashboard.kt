@@ -26,3 +26,6 @@ val searchResult = homeDevices.find { it.category == "Camera" }
 searchResult?.let {
     println(it.diagnose())
 }
+with(homeDevices) {
+    println("Jumlah perangkat: ${this.size}")
+}
